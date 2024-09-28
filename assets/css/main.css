@@ -1,0 +1,2296 @@
+/* Table of Contents
+----------------------------------
+
+0- Global CSS
+1- Heading CSS
+2- Button CSS
+3- Header Area CSS
+4- Home Area CSS
+5- About Area CSS
+6- Qualification Area CSS 
+7- Services Area CSS
+8- Portfolio Area CSS
+9- Testimonials Area CSS
+10- Blog Area CSS
+11- Contact Area CSS
+12- Footer Area CSS
+13- Scroll-Top Area CSS
+
+*/
+
+
+/*--------------------- 0- Global CSS (Start) ---------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('star-shadows.css');
+@import "https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700";
+@import "compass/css3";
+ @font-face {
+	 src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/polar.otf');
+	 font-family: 'Polar';}
+
+
+:root{
+    --dblue: #0a0a23;
+    --purple: #BC8CF2;
+    --black: #000000;
+    --white: #F7F5F2;
+    --grey: #DFDFDE;
+    --lblue:#5c3ceb;
+    --violet:#716ffa;
+    --green:#a8eb3c;
+    --orange:#ff6f2c;
+    --icon-color: #344955;
+    --width: 50px;
+    --height: 50px;
+    --border-radius: 100%;
+}
+
+*{
+    font-family: 'Roboto', sans-serif;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    text-transform: capitalize;
+    border: none;
+    outline: none;
+    -webkit-transition: all 0.2s linear;
+       -moz-transition: all 0.2s linear;
+         -o-transition: all 0.2s linear;
+  	        transition: all 0.2s linear;
+}
+
+*::selection{
+    color: var(--white);
+    background-color: var(--violet);
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    
+}
+
+body{
+    background-color: var(--black);
+    overflow: hidden;
+    
+}
+
+section{
+    padding: 2rem 5%;
+}
+
+::-webkit-scrollbar{
+    width: 0.8rem;
+}
+
+::-webkit-scrollbar-thumb{
+    border-radius: 1rem;
+    background-color: var(--violet);
+}
+
+::-webkit-scrollbar-track{
+    background-color: var(--black);
+}
+
+.swiper-pagination-bullet{
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50rem;
+    background-color: var(--grey);
+}
+
+.swiper-pagination-bullet-active{
+    width: 3rem;
+    background: var(--violet);
+}
+
+
+#stars {
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow: var(--stars);
+    animation: animStar 50s linear infinite; }
+    #stars:after {
+      content: " ";
+      position: absolute;
+      top: 2000px;
+      width: 1px;
+      height: 1px;
+      background: transparent;
+      box-shadow: var(--stars-after);}
+  
+  #stars2 {
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: var(--stars2);
+    animation: animStar 100s linear infinite; }
+    #stars2:after {
+      content: " ";
+      position: absolute;
+      top: 2000px;
+      width: 2px;
+      height: 2px;
+      background: transparent;
+      box-shadow: var(--stars2-after);}
+  
+  #stars3 {
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    box-shadow: var(--stars3);
+    animation: animStar 150s linear infinite; }
+    #stars3:after {
+      content: " ";
+      position: absolute;
+      top: 2000px;
+      width: 3px;
+      height: 3px;
+      background: transparent;
+      box-shadow: var(--stars3-after);}
+  
+  
+  @keyframes animStar {
+    from {
+      transform: translateY(0px); }
+    to {
+      transform: translateY(-2000px); } }
+  
+
+
+/*--------------------- 0- Global CSS (End) ---------------------*/
+
+
+
+/*--------------------- 1- Heading CSS (Start) ---------------------*/
+.heading{
+    margin-bottom: 2rem;
+}
+
+.heading h2{
+    text-align: center;
+    padding-bottom: 2rem;
+    color:var(--violet);
+    font-size: 4rem;
+}
+
+.heading h2 span{
+    position: relative;
+    z-index: 0;
+    color: var(--white);
+}
+
+.heading h2 span::before{
+    content: '';
+    position: absolute;
+    bottom: -0.5rem; left: 0;
+    z-index: -1;
+    background: var(--violet);
+    height: 0.2rem;
+    width: 80%;
+    margin-left: 10%;
+}
+
+/*--------------------- 1- Heading CSS (End) ---------------------*/
+
+
+
+/*--------------------- 2- Button CSS (Start) ---------------------*/
+.btn{
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1.8rem;
+    color: var(--violet);
+    background-color: transparent;
+    border: 0.2rem solid var(--violet);
+}
+
+.btn i{
+    padding-left: 1rem;
+}
+
+.btn:hover{
+    color: var(--white);
+    background-color: var(--violet);
+    cursor: pointer;
+}
+
+/*--------------------- 2- Button CSS (End) ---------------------*/
+
+
+
+/*--------------------- 3- Header Area CSS (Start) ---------------------*/
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    transition: all 0.5s linear;
+    z-index: 999;
+}
+
+header.sticky {
+    border-bottom: 0.1rem solid var(--grey);
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Align logo and Shibin to the left */
+header .logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+}
+
+header .logo img {
+    width: 50px; /* Adjust size as needed */
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+    margin-top: 0;
+}
+
+header .logo p {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--violet);
+    letter-spacing: 0.2rem;
+    margin-top: 1.8rem;
+    text-decoration: none;
+    margin: 0;
+}
+
+
+
+/* Center navbar items */
+.navbar {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center; /* Centers items horizontally */
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar a {
+    color: var(--white);
+    font-size: 1.8rem; /* Increase the size of navbar items */
+    margin: 0 2rem; /* Adjust margin for better spacing */
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--violet);
+    text-decoration: none;
+}
+
+.contact-btn {
+    padding: 12px 25px;
+    border: 2px solid var(--white);
+    border-radius: 25px;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 2rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.contact-btn:hover {
+    background-color: var(--white);
+    color: var(--violet);
+}
+
+/* Menubar for smaller screens */
+.wrapper {
+    width: var(--width);
+    height: var(--height);
+    position: relative;
+    border-radius: var(--border-radius);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    margin-right: 3rem;
+    
+    .fab {
+      background: white;
+      width: var(--width);
+      height: var(--height);
+      position: relative;
+      z-index: 3;
+      border-radius: var(--border-radius);
+      box-shadow: 0 2px 4px rgb(0, 0, 0);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: fab-animation-reverse 0.4s ease-out forwards;
+      
+      &::before,
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        border-radius: 4px;
+        background: #000000;
+      }
+      
+      &::before {
+        width: 4px;
+        height: 18px;
+      }
+      
+      &::after {
+        width: 18px;
+        height: 4px;
+      }
+    }
+    
+    .fac {
+      width: 180px;
+      height: 300px;
+      border-radius: 40px;
+      position: absolute;
+      background: #fff;
+      z-index: 2;
+      padding: 0.5rem 0.5rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+      opacity: 0;
+      top: 1px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      transition: opacity 0.2s ease-in, top 0.2s ease-in, width 0.1s ease-in;
+      
+    
+      a {
+        font-size: 20px;
+        color: var(--icon-color);
+        opacity: 1;
+        text-decoration: none;
+        transition: color 0.3s ease, opacity 0.3s ease, transform 0.3s ease; /* Add smooth transition for transform */
+
+        &:hover {
+          transition: 0.2s;
+          opacity: 1;
+          color: var(--violet);
+          transform: scale(1.2);
+        }
+      }
+    }
+    
+    input {
+      height: 100%;
+      width: 100%;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      position: absolute;
+      z-index: 5;
+      opacity: 0;
+      
+      &:checked {
+        ~ .fab {
+          animation: fab-animation 0.4s ease-out forwards;
+        }
+        
+        ~ .fac {
+          width: 180px;
+          height: 300px;
+          animation: fac-animation 0.4s ease-out forwards 0.1s;
+          top: 70px; /*distance between circle and square*/
+          opacity: 1;/*opacity of options*/
+        }
+      }
+    }
+  }
+  
+  @keyframes fab-animation {
+    0% {
+      transform: rotate(0) scale(1);
+    }
+    20% {
+      transform: rotate(60deg) scale(0.93);
+    }
+    55% {
+      transform: rotate(35deg) scale(0.97);
+    }
+    80% {
+      transform: rotate(48deg) scale(0.94);
+    }
+    100% {
+      transform: rotate(45deg) scale(0.95);
+    }
+  }
+  
+  @keyframes fab-animation-reverse {
+    0% {
+      transform: rotate(45deg) scale(0.95);
+    }
+    20% {
+      transform: rotate(-15deg);
+    }
+    55% {
+      transform: rotate(10deg);
+    }
+    80% {
+      transform: rotate(-3deg);
+    }
+    100% {
+      transform: rotate(0) scale(1);
+    }
+  }
+  
+  @keyframes fac-animation {
+    0% {
+      transform: scale(1, 1);
+    }
+    33% {
+      transform: scale(0.95, 1.05);
+    }
+    66% {
+      transform: scale(1.05, 0.95);
+    }
+    100% {
+      transform: scale(1, 1);
+    }
+  }
+
+/* Hides navbar and shows menu icon for screens smaller than 1200px */
+/* Hide the wrapper when the screen size is greater than 1200px */
+@media (max-width: 1000px) {
+    .navbar {
+        display: none; /* Ensure navbar is hidden when wrapper is visible */
+    }
+}
+
+/* Hide the wrapper when the screen size is greater than 1200px */
+@media (min-width: 1001px) {
+    .wrapper {
+        display: none; /* Hide the wrapper for larger screens */
+    }
+
+    .navbar {
+        display: flex; /* Show the navbar for larger screens */
+    }
+}
+
+/* Ensure contact button size remains fixed */
+@media (max-width: 992px) {
+    .contact-btn {
+        font-size: 2rem;
+        padding: 12px 25px;
+    }
+}
+/*--------------------- 3- Header Area CSS (End) ---------------------*/
+
+
+
+/*--------------------- 4- Home Area CSS (Start) ---------------------*/
+.home{
+    padding: 0rem 5%;
+    background-color: var(--black);
+    min-height: 100vh;
+}
+
+.home .box-container{
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 4rem;
+}
+
+.home .image {
+    text-align: center;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 40rem;
+    flex: 1 1 40rem;
+    position: relative; /* Added to retain positioning */
+    height: 70rem;      /* Make the image box height flexible as per your original image */
+}
+
+.img-box {
+    width: 100%;
+    height: 100%;
+    position: relative; /* Adjusted to keep it flexible inside the flex container */
+}
+
+.img-box img {
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    transition: bottom 1s, left 1s;
+    object-fit: cover;  /* Maintain aspect ratio and fit the images properly */
+}
+
+.img-box:hover .back-img {
+    bottom: 40px;
+}
+
+.img-box:hover .main-img {
+    left: 54%;
+}
+
+
+
+
+.home .content{
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 40rem;
+        flex: 1 1 40rem;
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: flex-start;
+
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+    margin-top: 7rem;
+}
+
+.home .content h2{
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--violet);
+}
+
+.home .content h1{
+    font-size: 4rem;
+    color: var(--white);
+    padding: 1rem 0;
+    text-transform: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+/* .home .content h1 span{
+    color: var(--violet);
+
+} */
+
+.home .content p{
+    font-size: 1.7rem;
+    font-weight: 400;
+    color: var(--white);
+    padding-bottom: 2rem;
+    line-height: 1.5;
+}
+
+
+.rotating-text {
+    font-family: Lato, sans-serif;
+    font-weight: 600;
+    font-size: 36px;
+    color: white;
+    transform: translateX(-80px);
+    margin-left: 10px;
+
+    p {
+      display: inline-flex;
+      margin: 0;
+      vertical-align: top;
+      margin-left: 90px;
+      margin-top: -10%;
+      font-size: 5rem;
+
+      .word {
+        position: absolute;
+        display: flex;
+        opacity: 0;
+        font-size: 4rem;
+        text-transform: none;
+        transition: opacity 0.38s ease-in-out; /* Smooth transition for opacity */
+
+        .letter {
+          transform-origin: center center 25px;
+          transition: transform 0.38s ease, opacity 0.38s ease;
+          text-transform: none;
+
+          .space {
+            display: inline-block;
+            width: 0.4em;  /* Adjust the width of the space to match the spacing of the text */
+          }
+          
+          &.out {
+            transform: rotateX(90deg);
+            opacity: 0; /* Fade out while rotating */
+            transition: transform 0.32s cubic-bezier(0.6, 0, 0.7, 0.2), opacity 0.32s ease; /* Smooth transition */
+          }
+
+          &.in {
+            transform: rotateX(0deg); /* Make sure it rotates in from the correct position */
+            opacity: 1; /* Ensure it fades in smoothly */
+            transition: transform 0.38s ease, opacity 0.38s ease; /* Adjust easing for smoother appearance */
+          }
+
+          &.behind {
+            transform: rotateX(-90deg); /* Keep hidden behind without flashing */
+            opacity: 0; /* Make sure it's hidden */
+          }
+        }
+      }
+    }
+}
+
+.alizarin {
+    color: #e74c3c;
+}
+
+.wisteria {
+    color: #8e44ad;
+}
+
+.peter-river {
+    color: #3498db;
+}
+
+.emerald {
+    color: #2ecc71;
+}
+
+.sun-flower {
+    color: #f1c40f;
+}
+
+
+/*--------------------- 4- Home Area CSS (End) ---------------------*/
+
+
+
+/*--------------------- 5- About Area CSS (Start) ---------------------*/
+.about .box-container{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 6rem;
+    padding: 6rem 0;
+}
+
+.about .image {
+    width: 32rem;
+    height: 32rem; /* Ensure height equals width for a perfect circle */
+    text-align: center;
+    border-radius: 50%; /* Makes the container circular */
+    overflow: hidden; /* Clips the image to the circular shape */
+    border: 0.5rem solid var(--violet); /* Move border to the container */
+    display: flex;
+    box-shadow: 2px 2px 20px var(--violet);
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.about .image img {
+    width: 100%;
+    height: 100%; /* Ensures the image fills the container */
+    object-fit: calc(); /* Maintains aspect ratio and covers the container */
+    /* Remove border-radius from the image as the container is already circular */
+}
+
+
+.about .content{
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 55rem;
+        flex: 1 1 55rem;
+}
+
+.about .content h2{
+    font-size: 3rem;
+    color: var(--white);
+    padding-bottom: 1rem;
+}
+
+.about .content > p{
+    font-size: 1.6rem;
+    color: var(--grey);
+    line-height: 1.6;
+    padding-bottom: 1rem;
+}
+
+.about .content .about-info{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+        justify-content: flex-start;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.about .content .about-info .info{
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 15rem;
+        flex: 1 1 15rem;
+}
+
+.about .content .about-info .info h4{
+    font-size: 1.6rem;
+    color: var(--white);
+    padding-bottom: 1rem;
+}
+
+.about .content .about-info .info span{
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--grey);
+}
+
+.about .content .about-info .info .btn{
+    margin-top: 1rem;
+}
+
+.counting{
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 35rem;
+        flex: 1 1 35rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.counting .box{
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 18rem;
+        flex: 1 1 18rem;
+    text-align: center;
+    background-color: #222;
+    padding: 2rem;
+}
+
+.counting .box .count{
+    font-size: 3.5rem;
+    color: var(--violet);
+    padding-bottom: 0.5rem;
+}
+
+.counting .box h3{
+    font-size: 1.8rem;
+    color: var(--white);
+}
+
+
+
+
+.skill-container {
+    padding: 2rem 0;
+}
+
+.skills {
+    display: flex;
+    justify-content: space-between;
+}
+
+.technical-skills, .professional-skills {
+    width: 45%;
+}
+
+.technical-skills .box {
+    padding: 1rem 0;
+    margin-bottom: 2rem; /* Add margin to create space between skills */
+    position: relative;
+}
+
+.technical-skills .box h3 {
+    display: flex;
+    justify-content: space-between;
+    padding: .7rem 0;
+    font-size: 1.7rem;
+    color: var(--white);
+    font-weight: 400;
+}
+
+.technical-skills .box .progress-bar {
+    width: 100%;
+    background: #ffffff;
+    overflow: hidden;
+    height: 1rem;
+    border-radius: 50rem;
+    position: relative;
+}
+
+.technical-skills .box .progress-bar span {
+    display: block;
+    height: 100%;
+    background: var(--violet);
+    width: 0; /* Initial state */
+    animation: fillBar 2s ease forwards; /* Animation for page load */
+}
+
+/* Animation to fill up the progress bar to the defined width */
+@keyframes fillBar {
+    from {
+        width: 0;
+    }
+    to {
+        width: var(--skill-width);
+    }
+}
+
+/* Apply skill-specific widths using CSS variables */
+/* HTML5 - Red */
+.technical-skills .box:nth-child(1) .progress-bar span { 
+    --skill-width: 95%; 
+    background: #e74c3c; /* Red */
+}
+
+/* CSS3 - Blue */
+.technical-skills .box:nth-child(2) .progress-bar span { 
+    --skill-width: 85%; 
+    background: #1f08ee; /* Blue */
+}
+
+/* JavaScript - Yellow */
+.technical-skills .box:nth-child(3) .progress-bar span { 
+    --skill-width: 80%; 
+    background: #ffcd03; /* Yellow */
+}
+
+/* JQuery - Green */
+.technical-skills .box:nth-child(4) .progress-bar span { 
+    --skill-width: 70%; 
+    background: #0df13e; /* Green */
+}
+
+/* Bootstrap - Purple */
+.technical-skills .box:nth-child(5) .progress-bar span { 
+    --skill-width: 75%; 
+    background: #9c17d1; /* Purple */
+}
+
+.technical-skills .box:nth-child(6) .progress-bar span {
+     --skill-width: 85%; 
+     background: #ff7300;
+    }
+
+/* Ensure animation restarts on hover */
+.technical-skills .box:hover .progress-bar span {
+    animation: none; /* Cancel any ongoing animation */
+    width: var(--skill-width);
+    transition: width 2s ease; /* Animate filling to correct percentage */
+}
+
+.professional-skills .heading {
+    margin-bottom: 8rem; /* Adjust this value to control space below the heading */
+}
+
+.circle-skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Adjusts the spacing between circles */
+}
+
+.circle-box {
+    width: 45%; /* Each box takes up 45% of the width, allowing two to fit per row */
+    margin-bottom: 2rem; /* Adds some space between the rows */
+    text-align: center; /* Center-aligns the text below each circular skill */
+}
+.circle-box p{
+    color: #ffffff;
+    margin-top: 2rem;
+    font-size: 1.7rem;
+    
+}
+
+.circle-gap {
+    margin-top: 50px; /* Adjust the value as per your required spacing */
+}
+
+
+.progress{
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    background: none;
+    margin: 0 auto;
+    box-shadow: none;
+    position: relative;
+    justify-content: center;
+}
+
+
+
+.progress:after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 12px solid #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.progress > span{
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+.progress .progress-left{
+    left: 0;
+}
+.progress .progress-bar{
+    width: 100%;
+    height: 100%;
+    background: none;
+    border-width: 12px;
+    border-style: solid;
+    position: absolute;
+    top: 0;
+}
+.progress .progress-left .progress-bar{
+    left: 100%;
+    border-top-right-radius: 80px;
+    border-bottom-right-radius: 80px;
+    border-left: 0;
+    -webkit-transform-origin: center left;
+    transform-origin: center left;
+}
+.progress .progress-right{
+    right: 0;
+}
+.progress .progress-right .progress-bar{
+    left: -100%;
+    border-top-left-radius: 80px;
+    border-bottom-left-radius: 80px;
+    border-right: 0;
+    -webkit-transform-origin: center right;
+    transform-origin: center right;
+    animation: loading-1 1.8s linear forwards;
+}
+.progress .progress-value{
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    background: #000000;
+    font-size: 24px;
+    color: #fff;
+    line-height: 135px;
+    text-align: center;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+.progress.blue .progress-bar{
+    border-color: #049dff;
+}
+.progress.blue .progress-left .progress-bar{
+    animation: loading-2 1.5s linear forwards 1.8s;
+}
+.progress.yellow .progress-bar{
+    border-color: #fdba04;
+}
+.progress.yellow .progress-left .progress-bar{
+    animation: loading-3 1s linear forwards 1.8s;
+}
+.progress.pink .progress-bar{
+    border-color: #e41534;
+}
+.progress.pink .progress-left .progress-bar{
+    animation: loading-4 0.4s linear forwards 1.8s;
+}
+.progress.green .progress-bar{
+    border-color: #048d72;
+}
+.progress.green .progress-left .progress-bar{
+    animation: loading-5 1.2s linear forwards 1.8s;
+}
+
+
+@keyframes loading-1{
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+}
+/* Creativity (90%) - Already correct */
+/* Creativity (90%) */
+@keyframes loading-2{
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(144deg); /* Creativity is 90%, so 162 degrees */
+        transform: rotate(144deg);
+    }
+}
+
+/* Communication (85%) */
+@keyframes loading-3{
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(130deg); /* Communication is 85%, so 153 degrees */
+        transform: rotate(130deg);
+    }
+}
+
+/* Problem Solving (85%) */
+@keyframes loading-4{
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(130deg); /* Problem Solving is 85%, so 153 degrees */
+        transform: rotate(130deg);
+    }
+}
+
+/* Teamwork (80%) */
+@keyframes loading-5{
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(115deg); /* Teamwork is 80%, so 144 degrees */
+        transform: rotate(115deg);
+    }
+}
+
+
+@media only screen and (max-width: 990px){
+    .progress{ margin-bottom: 20px; }
+}
+
+/* For medium screens */
+@media only screen and (max-width: 768px) {
+    .progress {
+        width: 120px;
+        height: 120px;
+        line-height: 120px;
+    }
+
+    .progress:after {
+        border-width: 10px;
+    }
+
+    .progress .progress-value {
+        font-size: 20px;
+        line-height: 108px;
+    }
+    
+    .circle-box {
+        width: 48%; /* Adjusts the width for medium screens */
+    }
+}
+
+/* For small screens */
+@media only screen and (max-width: 576px) {
+    .progress {
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+    }
+
+    .progress:after {
+        border-width: 8px;
+    }
+
+    .progress .progress-value {
+        font-size: 18px;
+        line-height: 90px;
+    }
+    
+    .circle-box {
+        width: 100%; /* Full width for small screens */
+        margin-bottom: 1.5rem;
+    }
+}
+
+/*--------------------- 5- About Area CSS (End) ---------------------*/
+
+
+
+/*--------------------- 6- Qualification Area CSS (Start) ---------------------*/
+.timeline {
+    background-color: #000000;
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    font: normal 16px/26px Open Sans Condensed, sans-serif;
+    color: #fff;
+    padding: 10px 20px 20px;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.block {
+    width: 500px;
+    max-width: 1000px;
+    position: relative;
+    &:before {
+        content: "";
+        position: absolute;
+        height: calc(100% - 40px);
+        width: 10px; /* Increased thickness of the central line */
+        background-color: #f2f2f2;
+        left: 50%;
+        margin-top: 20px;
+        border-radius: 5px;
+        display: flex;
+    }
+}
+
+.each-event {
+    background-color: #ffffff;
+    /* opacity: 0.5; */
+    color: #777;
+    padding: 30px; /* Increased padding for height */
+    margin: 60px 20px;
+    display: flex;
+    width: 500px; /* Increased width */
+    position: relative;
+    border-radius: 12px; /* Increased border-radius */
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+    &:before {
+        content: "";
+        position: absolute;
+        top: calc(50% - 15px); /* Centered vertically */
+        left: -80px; /* Adjusted position for a larger gap (increased from -35px) */
+        width: 60px; /* Circle size */
+        height: 60px;
+        border-radius: 50%;
+        background-color: #ffffff;
+        box-shadow: 0 4px 20px -4px rgba(64, 64, 64, 0.8);
+        background-image: url('https://img.freepik.com/premium-vector/purple-circle-with-man-graduation-cap_933463-37732.jpg?w=360'); /* Add the graduation hat image */
+        background-size: cover;
+        background-position: center;
+    }
+    &:nth-child(odd) {
+        margin-left: calc(50% + 54px); /* Increased gap from the circle */
+    }
+    &:nth-child(even) {
+        margin-left: calc(50% - 550px); /* Adjusted margin for the increased gap */
+        &:before {
+            left: calc(100% + 26px); /* Adjusted position for the circle in even elements */
+        }
+    }
+}
+.each-event, .title {
+    opacity: 0;
+    transition: all 1.5s ease-in-out;
+    transform: translateX(0); /* Default no movement */
+}
+
+/* Odd elements move from right */
+.each-event:nth-child(odd) {
+    transform: translateX(100px); /* Translate odd elements from right */
+}
+
+/* Even elements move from left */
+.each-event:nth-child(even) {
+    transform: translateX(-100px); /* Translate even elements from left */
+}
+
+/* When elements are in view, reset position to center */
+.fade-in:nth-child(odd) {
+    opacity: 1;
+    transform: translateX(0); /* Odd elements move to center */
+}
+
+.fade-in:nth-child(even) {
+    opacity: 1;
+    transform: translateX(0); /* Even elements move to center */
+}
+
+.title.non-focus {
+    font-size: 24px;
+    line-height: 34px;
+    transition: all 0.8s ease-in-out;
+}
+
+.each-event.non-focus {
+    color: #d2d2d2;
+    background: #e6e6e6;
+    margin-top: 90px;
+    transform: rotateZ(45deg);
+    transition: all 0.8s ease-in-out;
+    &:before {
+        opacity: 0;
+        background-color: #aaa;
+    }
+}
+
+
+/*--------------------- 6- Qualification Area CSS (End) ---------------------*/
+
+
+
+/*--------------------- 7- Project Area CSS (Start) ---------------------*/
+.service .box-container{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.cont {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    /* background-image: linear-gradient(to left bottom, #f2e3c6 0%, #a7a1a5 100%); */
+    overflow: hidden;
+}
+.app {
+    position: relative;
+    min-width: 950px;
+    height: 540px;
+    box-shadow: 0 0 60px rgba(0, 0, 0, .3);
+    overflow: hidden;
+    border-radius: 40px;
+}
+
+/* Styling for buttons container */
+.app .buttons {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1.2rem; /* Adds space between the buttons */
+}
+
+.app .buttons .btn {
+    display: inline-flex;
+    align-items: center; /* Aligns icon and text */
+    padding: 0.8rem 1.5rem;
+    font-size: 1.6rem;
+    color: var(--black);
+    background-color: var(--light-blue); /* Light background color */
+    border-radius: 25px; /* Rounded corners */
+    border: none;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.app .buttons .btn i {
+    margin-right: 0.8rem; /* Space between icon and text */
+    font-size: 2rem; /* Adjust icon size */
+}
+
+/* Hover effect for the button */
+.app .buttons .btn:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+/* Specific color for button icon (optional) */
+.app .buttons .btn i.fab, 
+.app .buttons .btn i.fas {
+    color: var(--black);
+}
+
+
+.app__bgimg {
+    position: absolute;
+    top: 0;
+    left: -2.5%;
+    width: 105%;
+    height: 100%;
+    transition: transform 3.5s 770ms;
+}
+.app__bgimg-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.app__bgimg-image--1 {
+    background: url('https://img.freepik.com/free-vector/people-recycling-different-products_23-2148513118.jpg?t=st=1727286860~exp=1727290460~hmac=eb0558c1b6563967d5961983d8375ed659041e08c699b44036d05c5da7784e18&w=1380') center center no-repeat;
+    background-size: cover;
+}
+.app__bgimg-image--2 {
+    background: url('https://img.freepik.com/free-vector/abandoned-library-with-old-books-dusty-shelves-working-desks-with-lamps-vector-cartoon-illustration-large-room-with-bookshelves-walls-covered-with-cobweb-haunted-archive-interior_107791-22989.jpg?t=st=1727283182~exp=1727286782~hmac=773e26bdd6bbade2a91ea00b813f30d67e61747d9679bbd2747713b752683e53&w=996') center center no-repeat;
+    background-size: cover;
+    opacity: 0;
+    transition: opacity 0ms 1300ms;
+    will-change: opacity;
+}
+.app__text {
+    position: absolute;
+    right: 165px;
+    top: 150px;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    z-index: 1;
+    margin-top: -6rem;
+    margin-left: 8rem;
+}
+.app__text-line {
+    transition: transform 1500ms 400ms, opacity 750ms 500ms;
+    will-change: transform, opacity;
+    user-select: none;
+    margin-left: 40rem;
+    
+}
+.app__text-line--4 {
+    transition: transform 1500ms 2300ms, opacity 1500ms 3500ms;
+}
+.app__text-line--3 {
+    transition: transform 1500ms 2200ms, opacity 1500ms 3250ms;
+}
+.app__text-line--2 {
+    transition: transform 1500ms 2100ms, opacity 1500ms 3000ms;
+}
+.app__text-line--1 {
+    transition: transform 1500ms 2000ms, opacity 1500ms 2750ms;
+}
+.app__text-line--4 {
+    font-size: 50px;
+    font-weight: 700;
+    color: #0a101d;
+}
+.app__text-line--3 {
+    font-size: 20px;
+    font-weight: 300;
+}
+.app__text-line--2 {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #09c;
+}
+.app__text-line--1 {
+    margin-top: 15px;
+}
+.app__text-line--1 img {
+    width: 50px;
+}
+.app__text--1 .app__text-line {
+    transform: translate3d(0, -125px, 0);
+    opacity: 0;
+}
+.app__text--2 {
+    right: initial;
+    top: 250px;
+    left: 20px;
+    z-index: -1;
+    transition: z-index 1500ms;
+    margin-left: -30rem;
+}
+.app__text--2 .app__text-line--4 {
+    opacity: 0;
+    transition: transform 1500ms 525ms, opacity 400ms 725ms;
+}
+.app__text--2 .app__text-line--3 {
+    opacity: 0;
+    transition: transform 1500ms 450ms, opacity 400ms 650ms;
+}
+.app__text--2 .app__text-line--2 {
+    opacity: 0;
+    transition: transform 1500ms 375ms, opacity 400ms 575ms;
+}
+.app__text--2 .app__text-line--1 {
+    opacity: 0;
+    transition: transform 1500ms 300ms, opacity 400ms 500ms;
+}
+.app__img {
+    position: absolute;
+    transform: translate3d(0, -750px, 0);
+    width: 950px;
+    height: 100%;
+    transition: transform 3s cubic-bezier(0.6, 0.13, 0.31, 1.02);
+    will-change: transform;
+}
+.app__img img {
+    min-width: 100%;
+    user-select: none;
+}
+.initial .app__img {
+    transform: translate3d(0, 0, 0);
+}
+.initial .app__text--1 .app__text-line--1 {
+    transform: translate3d(0, 0, 0);
+    transition: transform 1500ms 1400ms, opacity 400ms 1600ms;
+    opacity: 1;
+}
+.initial .app__text--1 .app__text-line--2 {
+    transform: translate3d(0, 0, 0);
+    transition: transform 1500ms 1475ms, opacity 400ms 1675ms;
+    opacity: 1;
+}
+.initial .app__text--1 .app__text-line--3 {
+    transform: translate3d(0, 0, 0);
+    transition: transform 1500ms 1550ms, opacity 400ms 1750ms;
+    opacity: 1;
+}
+.initial .app__text--1 .app__text-line--4 {
+    transform: translate3d(0, 0, 0);
+    transition: transform 1500ms 1625ms, opacity 400ms 1825ms;
+    opacity: 1;
+}
+.active .app__bgimg {
+    transform: translate3d(10px, 0, 0) scale(1.05);
+    transition: transform 5s 850ms ease-in-out;
+}
+.active .app__bgimg .app__bgimg-image--2 {
+    opacity: 1;
+    transition: opacity 0ms 1500ms;
+}
+.active .app__img {
+    transition: transform 3s cubic-bezier(0.6, 0.13, 0.31, 1.02);
+    transform: translate3d(0, -1410px, 0);
+}
+.active .app__text--1 {
+    z-index: -1;
+    transition: z-index 0ms 1500ms;
+}
+.active .app__text--1 .app__text-line--1 {
+    transform: translate3d(0, -125px, 0);
+    transition: transform 1500ms 300ms, opacity 400ms 500ms;
+    opacity: 0;
+}
+.active .app__text--1 .app__text-line--2 {
+    transform: translate3d(0, -125px, 0);
+    transition: transform 1500ms 375ms, opacity 400ms 575ms;
+    opacity: 0;
+}
+.active .app__text--1 .app__text-line--3 {
+    transform: translate3d(0, -125px, 0);
+    transition: transform 1500ms 450ms, opacity 400ms 650ms;
+    opacity: 0;
+}
+.active .app__text--1 .app__text-line--4 {
+    transform: translate3d(0, -125px, 0);
+    transition: transform 1500ms 525ms, opacity 400ms 725ms;
+    opacity: 0;
+}
+.active .app__text--2 {
+    z-index: 1;
+}
+.active .app__text--2 .app__text-line--1 {
+    transform: translate3d(0, -125px, 0);
+    transition: transform 2500ms 1100ms, opacity 1300ms 1300ms;
+    opacity: 1;
+}
+.active .app__text--2 .app__text-line--2 {
+    transform: translate3d(0, -125px, 0);
+    transition: transform 2500ms 1175ms, opacity 1300ms 1575ms;
+    opacity: 1;
+}
+.active .app__text--2 .app__text-line--3 {
+    transform: translate3d(0, -125px, 0);
+    transition: transform 2500ms 1250ms, opacity 1300ms 1850ms;
+    opacity: 1;
+}
+.active .app__text--2 .app__text-line--4 {
+    transform: translate3d(0, -125px, 0);
+    transition: transform 2500ms 1325ms, opacity 1300ms 2125ms;
+    opacity: 1;
+}
+.mouse {
+    position: relative;
+    margin-right: 20px;
+    min-width: 50px;
+    height: 80px;
+    border-radius: 30px;
+    border: 5px solid rgba(255, 255, 255, .8);
+}
+.mouse:after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+    animation: scroll 1s infinite alternate;
+}
+@keyframes scroll {
+    100% {
+        transform: translate(-50%, 15px);
+   }
+}
+.pages {
+    margin-left: 20px;
+}
+.pages__list {
+    list-style-type: none;
+}
+.pages__item {
+    position: relative;
+    margin-bottom: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    cursor: pointer;
+}
+.pages__item:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0, 0);
+    width: 75%;
+    height: 75%;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0;
+    transition: 500ms;
+}
+.pages__item:hover:after {
+    transform: translate(-50%, -50%) scale(1, 1);
+    opacity: 1;
+}
+.page__item-active:after {
+    transform: translate(-50%, -50%) scale(1, 1);
+    opacity: 1;
+}
+/* .icon-link {
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+    width: 50px;
+}
+.icon-link img {
+    width: 100%;
+    vertical-align: top;
+} */
+
+
+
+/*--------------------- 7- Project Area CSS (End) ---------------------*/
+
+
+
+/*--------------------- 8- Portfolio Area CSS (Start) ---------------------*/
+.portfolio .heading{
+    margin-bottom: 50px;
+}
+.slider {
+    width: 1300px;
+    max-width: 100vw;
+    height: 700px;
+    box-shadow: 5px 4px 50px #ffffff;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 30px;
+    margin-bottom: 60px;
+}
+.list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: flex;
+    width: max-content;
+    transition: 1s;
+}
+.list img {
+    width: 1300px;
+    max-width: 100vw;
+    height: 100%;
+    object-fit: cover;
+}
+.buttons {
+    position: absolute;
+    top: 45%;
+    left: 5%;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+.buttons button {
+    width: 60px; /* Adjust button size */
+    height: 60px;
+    border-radius: 20px; /* Adjust corner radius */
+    background-color: rgba(15, 13, 13, 0.333);
+    color: #fff;
+    border: none;
+    font-family: monospace;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: absolute;
+}
+
+/* Adjust position of the left button */
+#prev {
+    left: 0px; /* Move the left button */
+}
+
+/* Adjust position of the right button */
+#next {
+    right: 0px; /* Move the right button */
+}
+
+.buttons button:hover {
+    background-color: #fff;
+    color: #000;
+}
+.dots {
+    position: absolute;
+    bottom: 10px;
+    color: #fff;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    transition: 1s;
+}
+.dots li {
+    list-style: none;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    margin: 20px;
+    border-radius: 20px;
+}
+.dots li.active {
+    width: 30px;
+}
+@media screen and (max-width: 768px) { 
+    .slider {
+        height: 400px;
+    }
+}
+
+
+/*--------------------- 8- Portfolio Area CSS (End) ---------------------*/
+
+
+
+/*--------------------- 9- Testimonials Area CSS (Start) ---------------------*/
+.testimonial-slider{
+    position: relative;
+    padding-bottom: 4rem;
+    overflow: hidden;
+}
+
+.testi-item{
+    text-align: center;
+    border: 0.1rem solid var(--grey);
+    border-radius: 0.5rem;
+    padding: 4rem 2rem;
+}
+
+.testi-item:hover{
+    border-color: var(--purple);
+}
+
+.testi-item img{
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+    border: 0.5rem solid var(--white);
+}
+
+.testi-item .fa-quote-left{
+    display: block;
+    font-size: 3rem;
+    color: var(--white);
+    margin: 1rem 0;
+}
+
+.testi-item p{
+    color: var(--grey);
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+
+.testi-item .intro{
+    margin: 1rem 0;
+}
+
+.testi-item .intro h3{
+    font-size: 2rem;
+    color: var(--white);
+    padding-bottom: 0.5rem;
+}
+
+.testi-item .intro h5{
+    color: var(--purple);
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+/*--------------------- 9- Testimonials Area CSS (End) ---------------------*/
+
+
+
+/*--------------------- 10- certification CSS (Start) ---------------------*/
+.blog-slider{
+    position: relative;
+    padding-bottom: 4rem;
+    overflow: hidden;
+}
+
+.blog-item{
+    background-color: #222;
+    border: 0.1rem solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    height: 58rem;
+    position: relative;
+}
+
+.blog-item .image{
+    height: 25rem;
+    overflow: hidden;
+}
+
+.blog-item:hover .image img{
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+}
+
+.blog-item .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.blog-item .content{
+    padding: 2rem 1rem;
+    
+}
+
+.blog-item .content .intro{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    border-bottom: 0.2rem solid var(--grey);
+    padding: 1rem 0;
+    margin-bottom: 1.5rem;
+}
+
+.blog-item .content .intro h5{
+    font-size: 1.5rem;
+}
+
+.blog-item .content .intro h5 i{
+    color: var(--purple);
+    padding-right: 0.5rem;
+}
+
+.blog-item .content .intro h5 span{
+    color: var(--grey);
+}
+
+.blog-item .content .main-heading{
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--white);
+}
+
+.blog-item p{
+    padding: 1rem 0;
+    font-size: 1.6rem;
+    color: var(--grey);
+    text-transform: none;
+}
+
+.blog-item .btn {
+    position: absolute;
+    bottom: 2rem; /* Align button 1rem from the bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Center the button horizontally */
+    margin-top: 0; /* Remove any previous margin that pushes the button */
+}
+
+
+/* Popup container */
+.popup{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 80%;
+    max-width: 1600px;
+    height: 90vh;
+    max-height: 800px;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    overflow: hidden;
+    transition: 1s;
+    opacity: 0;
+}
+
+.popup.active{
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.popup.active .close-btn,
+.popup.active .image-name,
+.popup.active .index,
+.popup.active .large-image,
+.popup.active .arrow-btn{
+    opacity: 1;
+    transition: opacity .5s;
+    transition-delay: 1s;
+}
+
+.top-bar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: #000;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    font-weight: 300;
+}
+
+.image-name{
+    opacity: 0;
+}
+
+.close-btn {
+    opacity: 0;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    background: none; /* Remove background color */
+    cursor: pointer;
+}
+
+.close-btn::before, 
+.close-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 24px;
+    height: 2px;
+    background-color: white; /* White color for the X */
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.close-btn::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.arrow-btn{
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    border-radius: 50%;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.left-arrow{
+    left: 10px;
+}
+
+.right-arrow{
+    right: 10px;
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.arrow-btn:hover{
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.index{
+display: none;
+}
+
+.large-image{
+    margin-top: 5%;
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    opacity: 0;
+}
+
+/*--------------------- 10- Certification Area CSS (End) ---------------------*/
+
+
+
+/*--------------------- 11- Contact Area CSS (Start) ---------------------*/
+.contact .alert{
+    font-size: 2rem;
+    color: var(--purple);
+    border-radius: 0.5rem;
+    padding-left: 1rem;
+}
+
+.contact .box-container{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.contact-info{
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 42rem;
+        flex: 1 1 42rem;
+}
+
+.contact-info h3{
+    font-size: 3rem;
+    color: var(--white);
+}
+
+.contact-info > p{
+    font-size: 1.6rem;
+    color: var(--grey);
+    padding: 0.5rem 0;
+}
+
+.contact-info .info-item{
+    padding: 1rem 0;
+}
+
+.contact-info .info-item .gmail,
+.contact-info .info-item .linkedin,
+.contact-info .info-item .github{
+    text-transform: none;
+}
+
+.contact-info .info-item h4{
+    font-size: 1.8rem;
+    color: var(--white);
+}
+
+.contact-info .info-item .detail{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.contact-info .info-item .detail .fas,
+.contact-info .info-item .detail .fab{
+    border-radius: 50%;
+    color: var(--purple);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.contact-info .info-item .detail p{
+    font-size: 1.6rem;
+    color: var(--grey);
+    line-height: 1.6;
+    padding-left: 1rem;
+    padding-top: 0.8rem;
+}
+
+.contact-form{
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 42rem;
+        flex: 1 1 42rem;
+}
+
+.contact-form .box{
+    width: 100%;
+    text-transform: none;
+    color: var(--grey);
+    font-size: 1.6rem;
+    border: 0.1rem solid rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    margin: 0.5rem 0;
+    background-color: #222;
+}
+
+.contact-form .box:focus{
+    border-color: var(--white);
+}
+
+.contact-form .box::placeholder{
+    color: var(--grey);
+}
+
+.contact-form textarea{
+    height: 15rem;
+    resize: none;
+}
+
+.contact-form .btn{
+    margin-top: 1rem;
+}
+
+/*--------------------- 11- Contact Area CSS (End) ---------------------*/
+
+
+
+/*--------------------- 12- Footer Area CSS (Start) ---------------------*/
+footer {
+    background-color: var(--white);
+    padding: 4rem 0;
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+    overflow-x: hidden;
+    z-index: 1;
+    
+}
+
+/* Add the background and animations */
+.footer_bg {
+    position: absolute;
+    bottom: 0;
+    background: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEigB8iI5tb8WSVBuVUGc9UjjB8O0708X7Fdic_4O1LT4CmLHoiwhanLXiRhe82yw0R7LgACQ2IhZaTY0hhmGi0gYp_Ynb49CVzfmXtYHUVKgXXpWvJ_oYT8cB4vzsnJLe3iCwuzj-w6PeYq_JaHmy_CoGoa6nw0FBo-2xLdOPvsLTh_fmYH2xhkaZ-OGQ/s16000/footer_bg.png") no-repeat scroll center 0;
+    width: 100%;
+    height: 266px;
+    z-index: 0;
+}
+.footer_bg_one, .footer_bg_two, .footer_bg_three {
+    z-index: 0; /* Ensure animated elements are behind other content */
+}
+
+.footer_bg_one {
+    background: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEia0PYPxwT5ifToyP3SNZeQWfJEWrUENYA5IXM6sN5vLwAKvaJS1pQVu8mOFFUa_ET4JuHNTFAxKURFerJYHDUWXLXl1vDofYXuij45JZelYOjEFoCOn7E6Vxu0fwV7ACPzArcno1rYuVxGB7JY6G7__e4_KZW4lTYIaHSLVaVLzklZBLZnQw047oq5-Q/s16000/volks.gif") no-repeat center center;
+    width: 330px;
+    height: 105px;
+    background-size: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 30%;
+    -webkit-animation: myfirst 22s linear infinite;
+    animation: myfirst 22s linear infinite;
+}
+
+.footer_bg_two {
+    background: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhyLGwEUVwPK6Vi8xXMymsc-ZXVwLWyXhogZxbcXQYSY55REw_0D4VTQnsVzCrL7nsyjd0P7RVOI5NKJbQ75koZIalD8mqbMquP20fL3DxsWngKkOLOzoOf9sMuxlbyfkIBTsDw5WFUj-YJiI50yzgVjF8cZPHhEjkOP_PRTQXDHEq8AyWpBiJdN9SfQA/s16000/cyclist.gif") no-repeat center center;
+    width: 88px;
+    height: 100px;
+    background-size: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 38%;
+    -webkit-animation: myfirst 30s linear infinite;
+    animation: myfirst 30s linear infinite;
+}
+
+.footer_bg_three {
+    background: url("") no-repeat center center;
+    width: 120px;
+    height: 120px;
+    background-size: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 50%; /* Adjust as per design */
+    -webkit-animation: mythird 28s linear infinite;
+    animation: mythird 28s linear infinite;
+}
+
+/* Keyframes for third GIF animation */
+@-webkit-keyframes mythird {
+  0% {
+    left: -30%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes mythird {
+  0% {
+    left: -30%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@-moz-keyframes myfirst {
+  0% {
+    left: -25%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@-webkit-keyframes myfirst {
+  0% {
+    left: -25%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes myfirst {
+  0% {
+    left: -25%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Original social icons styles */
+footer .social {
+    display: flex;
+    justify-content: center;
+    padding: 4rem 0;
+    z-index: 2; /* Ensures social icons are above animations */
+    position: relative;
+    transform: translateY(-30px); /* Move the social icons 20px upwards */
+}
+
+
+footer .social .fab {
+    background-color: var(--black);
+    border-radius: 50%;
+    height: 4rem;
+    width: 4rem;
+    color: var(--white);
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0.5rem;
+    z-index: 3;
+    
+}
+  
+footer .social .fab:hover {
+    color: var(--black);
+    background-color: var(--white);
+    text-decoration: none;
+}
+
+/*--------------------- 12- Footer Area CSS (End) ---------------------*/
+
+
+
+/*--------------------- 13- Scroll-Top (Start) ---------------------*/
+.scroll-top{
+    position: fixed;
+    bottom: 1rem;
+    right:1rem;
+    height: 5rem;
+    width: 5rem;
+    font-size: 3rem;
+    font-weight:lighter;
+    background: var(--black);
+    color: var(--white);
+    border: 0.2rem solid var(--white);
+    border-radius: 50%;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+    z-index: 999;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .scroll-top:hover{
+    background: var(--white);
+    color:var(--black);
+  }
+
+/*--------------------- 13- Scroll-Top (End) ---------------------*/
