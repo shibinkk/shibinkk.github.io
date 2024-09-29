@@ -26,6 +26,19 @@
     <link rel="stylesheet"  href="assets/css/main.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
 
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+    emailjs.init({
+        publicKey: "rvsBpQ7A8Uh0Da51-",
+    });
+    })();
+    </script>
+
+    <script src="assets/js/email.js"></script>    
+
 </head>
 <body>
 
@@ -648,8 +661,8 @@
                 <input type="text" name="name" class="box" id="name" placeholder="name" required />
                 <input type="email" name="email" class="box" id="email" placeholder="email" required />
                 <input type="text" name="subject" class="box" id="subject" placeholder="subject" required />
-                <textarea cols="30" rows="10" name="comment" id="comment" class="box" placeholder="message"></textarea>
-                <button type="submit" class="btn" name="submit" id="submit">send message</button>
+                <textarea cols="30" rows="10" name="message" id="message" class="box" placeholder="message"></textarea>
+                <button type="submit" onclick="sendMail()" class="btn" name="submit" id="submit">send message</button>
                 
                 <span class="alert" id="msg"></span>
                 
