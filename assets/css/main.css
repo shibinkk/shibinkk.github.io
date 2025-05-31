@@ -202,23 +202,29 @@ section{
 
 
 /*--------------------- 2- Button CSS (Start) ---------------------*/
-.btn{
+.btn {
     display: inline-block;
     padding: 1rem 2rem;
     font-size: 1.8rem;
-    color: var(--violet);
-    background-color: transparent;
-    border: 0.2rem solid var(--violet);
+    color: var(--black);
+    background-color: var(--white); /* Light background color */
+    border-radius: 25px; /* Rounded corners */
+    border: none;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease-in-out; /* Added transform transition */
 }
 
-.btn i{
+.btn i {
     padding-left: 1rem;
 }
 
-.btn:hover{
-    color: var(--white);
-    background-color: var(--violet);
-    cursor: pointer;
+.btn:hover {
+    transform: scale(1.1);
+}
+
+.btn {
+    transform: scale(1); /* Ensure smooth transition back to original state */
 }
 
 /*--------------------- 2- Button CSS (End) ---------------------*/
@@ -1299,7 +1305,7 @@ header .logo p {
     /* background-image: linear-gradient(to left bottom, #f2e3c6 0%, #a7a1a5 100%); */
     overflow: hidden;
 }
-.app {
+.cont .app {
     position: relative;
     min-width: 950px;
     height: 540px;
@@ -1309,13 +1315,15 @@ header .logo p {
 }
 
 /* Styling for buttons container */
-.app .buttons {
-    margin-top: 1rem;
+.cont .app .buttons {
+    margin-top: 0.5rem;
+    margin-left: 35px;
+    padding-right: 180px;
     display: flex;
-    gap: 1.2rem; /* Adds space between the buttons */
+    gap: 1.8rem; /* Adds space between the buttons */
 }
 
-.app .buttons .btn {
+.cont .app .buttons .btn {
     display: inline-flex;
     align-items: center; /* Aligns icon and text */
     padding: 0.8rem 1.5rem;
@@ -1329,20 +1337,20 @@ header .logo p {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.app .buttons .btn i {
+.cont .app .buttons .btn i {
     margin-right: 0.8rem; /* Space between icon and text */
     font-size: 2rem; /* Adjust icon size */
 }
 
 /* Hover effect for the button */
-.app .buttons .btn:hover {
+.cont .app .buttons .btn:hover {
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
 
 /* Specific color for button icon (optional) */
-.app .buttons .btn i.fab, 
-.app .buttons .btn i.fas {
+.cont .app .buttons .btn i.fab, 
+.cont .app .buttons .btn i.fas {
     color: var(--black);
 }
 
@@ -1650,9 +1658,23 @@ header .logo p {
 .list img {
     width: 1300px;
     max-width: 100vw;
-    height: 100%;
-    object-fit: cover;
+    height: 90%;
+    margin-top: 15px;
+    object-fit: contain;
 }
+
+/* Center and scale the video properly */
+.list video {
+    width: 1300px; /* Maintain the video's aspect ratio */
+    height: 90%; /* Adjust the height to fit within the slider */
+    max-width: 100vw; /* Prevent the video from exceeding the slider's width */
+    display: block; /* Ensure proper alignment */
+    margin: auto; /* Center the video horizontally and vertically */
+    object-fit: contain; /* Ensure the full video is visible without cropping */
+    border-radius: 30px; /* Match the slider's rounded corners */
+}
+
+
 .buttons {
     position: absolute;
     top: 45%;

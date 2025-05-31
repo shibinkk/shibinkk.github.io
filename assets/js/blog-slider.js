@@ -1,4 +1,4 @@
-/*--------------- Blog Slider ---------------*/
+        /*--------------- Blog Slider ---------------*/
 var swiper = new Swiper(".blog-slider", { 
 
     spaceBetween: 20,
